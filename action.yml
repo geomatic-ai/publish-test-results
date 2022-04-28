@@ -1,0 +1,28 @@
+name: publish-test-results
+author: Ross King
+description: Publishes test results.
+
+inputs:
+  report_file:
+    description: Path to the reports file. This should be in markdown format.
+
+  report_name:
+    description: The name of the report
+
+  report_title:
+    description: The title of the report.
+
+  github_token:
+    description: GITHUB_TOKEN to authenticate against API calls to attach report to Workflow Run.
+
+outputs:
+
+branding:
+  color: purple
+  icon: check-circle
+
+## Even though the Action logic may be implemented
+## in PWSH, we still need a NodeJS entry point
+runs:
+  using: node12
+  main: _init/index.js
